@@ -32,7 +32,10 @@ jobs:
         with:
             aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
             aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-            aws-region: ${{ secrets.AWS_REGION }}
+            aws-region: mx-central-1
+
+      - name: Run Serverless Deploy
+        run: npx serverless deploy --stage staging
 
       - name: Build the app
         run: npm run build
