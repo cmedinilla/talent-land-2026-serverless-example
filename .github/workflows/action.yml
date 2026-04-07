@@ -36,6 +36,8 @@ jobs:
 
       - name: Run Serverless Deploy
         run: npx serverless deploy --stage staging
+        env:
+          SERVERLESS_ACCESS_KEY: ${{ secrets.SLS_ACCESS_KEY }}
 
       - name: Build the app
         run: npm run build
